@@ -1,1 +1,207 @@
-<h1>Site do Restaurante</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante-Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo-do-site">
+    <div class="logo">
+        <img src="img/logo.png">
+    </div>
+    <nav class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    <div class="cart-container">
+    <div class="cart-icon" onclick="toggleCarrinho()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrinho">0</span>
+    </div>
+    <div id="carrinho-dropdown" class="carrinho-dropdown">
+      <h4>Carrinho</h4>
+      <ul id="lista-carrinho"></ul>
+      <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+    </div>
+  </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <p><strong>Venha Experimentar!</strong></p>
+    <p>O melhor da cozinha Italiana.</p>
+    <a href="#cardapio">Cárdapio</a>
+</section>
+
+<section id="sobre" class="sobre">
+  <div class="container-sobre">
+    <div class="box-sobre">
+      <h2>Sobre Nós</h2>
+      <p>
+        No <strong>Sicilia Cucina</strong>, nossa paixão pela culinária italiana vai além do sabor — é uma experiência autêntica. 
+        Inspirados nas tradições da Sicília, trazemos pratos feitos com ingredientes frescos, amor e respeito à cultura italiana.
+      </p>
+      <p>
+        Do clássico spaghetti ao molho artesanal, ao nosso irresistível tiramisù, cada detalhe é pensado para proporcionar uma 
+        verdadeira viagem à Itália, sem sair do Brasil.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="cardapio" class="cardapio">
+  <h2>Conheça nosso Cardápio!</h2>
+  <div class="cardapio-grid">
+
+    <div class="item-cardapio">
+      <img src="img/carbonara.jpg" alt="Spaghetti Carbonara">
+      <h3>Spaghetti Carbonara</h3>
+      <p>R$ 45,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Spaghetti Carbonara', 45.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/lasanha.jpg" alt="Lasanha à Bolonhesa">
+      <h3>Lasanha à Bolonhesa</h3>
+      <p>R$ 48,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Lasanha à Bolonhesa', 48.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/margherita.jpg" alt="Pizza Margherita">
+      <h3>Pizza Margherita</h3>
+      <p>R$ 52,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Pizza Margherita', 52.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/funghi.jpg" alt="Risoto de Funghi">
+      <h3>Risoto de Funghi</h3>
+      <p>R$ 44,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Risoto de Funghi', 44.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/tiramisu.jpg" alt="Tiramisù">
+      <h3>Tiramisù</h3>
+      <p>R$ 26,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Tiramisù', 26.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/gnocchi.jpg" alt="Gnocchi ao Sugo">
+      <h3>Gnocchi ao Sugo</h3>
+      <p>R$ 40,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Gnocchi ao Sugo', 40.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/polenta.jpeg" alt="Polenta com Ragu">
+      <h3>Polenta com Ragu</h3>
+      <p>R$ 38,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Polenta com Ragu', 38.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/cannolo.jpeg" alt="Cannoli Siciliano">
+      <h3>Cannoli Siciliano</h3>
+      <p>R$ 28,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Cannoli Siciliano', 28.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/brusqueta.jpg" alt="Bruschetta Tradicional">
+      <h3>Bruschetta Tradicional</h3>
+      <p>R$ 22,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Bruschetta Tradicional', 22.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/panna.jpg" alt="Panna Cotta">
+      <h3>Panna Cotta</h3>
+      <p>R$ 24,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Panna Cotta', 24.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+    <div class="item-cardapio">
+      <img src="img/ravioli.jpg" alt="Panna Cotta">
+      <h3>Ravioli de Ricota ao Manjericão</h3>
+      <p>R$ 46,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Ravioli de Ricota ao Manjericão', 46.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+      <div class="item-cardapio">
+      <img src="img/calzone.jpg" alt="Panna Cotta">
+      <h3>Calzone Napolitano</h3>
+      <p>R$ 49,00</p>
+      <button class="btn-add" onclick="adicionarCarrinho('Calzone Napolitano', 49.00)">Adicionar</button>
+      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="contato" class="contato">
+  <h2>Fale Conosco</h2>
+  <div class="contato-boxes">
+
+    <div class="contato-item">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <p>contato@siciliacucina.com</p>
+    </div>
+
+    <div class="contato-item">
+      <i class="fas fa-phone-alt"></i>
+      <h3>Telefone</h3>
+      <p>(11) 91234-5678</p>
+    </div>
+
+    <div class="contato-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Endereço</h3>
+      <p>Rua Monsenhor Hipólito, 778 - Picos, PI</p>
+    </div>
+
+  </div>
+</section>
+
+<footer> <p>&copy; 2025 <a href="https://github.com/JaoDev-10">JaoDev-10</a>. Todos os direitos reservados.<br> 
+    Professor Orientador: Cleiton Leal Jericó <br>
+    Sesi | Senai
+  </p>
+  <nav>
+    <a href="termos.html">Termos de Uso</a> |
+    <a href="politica.html">Política de Privacidade</a>
+  </nav>
+  <div class="icons">
+    <a href="https://wa.me/5589988266538">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="https://www.instagram.com/_joaosmp/">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    </a>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
