@@ -8,153 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <header class="topo-do-site">
     <div class="logo">
-        <img src="img/logo.png">
+        <img src="img/logo restaurante definitivo - Editado.png">
     </div>
     <nav class="menu">
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
-    <div class="cart-container">
-    <div class="cart-icon" onclick="toggleCarrinho()">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="contador-carrinho">0</span>
-    </div>
-    <div id="carrinho-dropdown" class="carrinho-dropdown">
-      <h4>Carrinho</h4>
-      <ul id="lista-carrinho"></ul>
-      <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-    </div>
-  </div>
+        <a href="cardapio.html">Cárdapio</a>
     </nav>
 </header>
 
-<section class="hero">
-    <p><strong>Venha Experimentar!</strong></p>
-    <p>O melhor da cozinha Italiana.</p>
-    <a href="#cardapio">Cárdapio</a>
-</section>
+<div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/1.jpg" alt="Banner 1" />
+      </div>
+      <div class="swiper-slide">
+        <img src="img/2.jpg" alt="Banner 2" />
+      </div>
+      <div class="swiper-slide">
+        <img src="img/3.jpg" alt="Banner 3" />
+      </div>
+      <div class="swiper-slide">
+        <img src="img/4.jpg" alt="Banner 4" />
+      </div>
+    </div>
+    </div>
 
 <section id="sobre" class="sobre">
   <div class="container-sobre">
     <div class="box-sobre">
       <h2>Sobre Nós</h2>
       <p>
-        No <strong>Sicilia Cucina</strong>, nossa paixão pela culinária italiana vai além do sabor — é uma experiência autêntica. 
-        Inspirados nas tradições da Sicília, trazemos pratos feitos com ingredientes frescos, amor e respeito à cultura italiana.
-      </p>
-      <p>
-        Do clássico spaghetti ao molho artesanal, ao nosso irresistível tiramisù, cada detalhe é pensado para proporcionar uma 
-        verdadeira viagem à Itália, sem sair do Brasil.
-      </p>
+      No <strong>Sabor da Terra</strong>, nossa missão é resgatar e valorizar a rica tradição da culinária nordestina, trazendo para cada prato o verdadeiro sabor e a alma do Nordeste brasileiro. Fundado por apaixonados pela cultura e gastronomia da região, nosso restaurante é um espaço onde receitas genuínas ganham vida através de ingredientes frescos, técnicas artesanais e muito carinho.</p>
+
+      <p>Aqui, cada refeição é uma celebração à nossa terra, nossa gente e nossas raízes. Buscamos oferecer uma experiência que vai além do paladar — queremos proporcionar momentos de acolhimento, lembranças afetivas e descobertas culturais.</p>
+
+      <p>Seja você um visitante curioso ou um nordestino de coração, o Sabor da Terra é o seu cantinho para sentir-se em casa, saboreando pratos que contam histórias e aquecem a alma.
+
+Venha nos conhecer e fazer parte dessa trajetória saborosa!</p>
+      
     </div>
   </div>
 </section>
 
-<section id="cardapio" class="cardapio">
-  <h2>Conheça nosso Cardápio!</h2>
-  <div class="cardapio-grid">
-
-    <div class="item-cardapio">
-      <img src="img/carbonara.jpg" alt="Spaghetti Carbonara">
-      <h3>Spaghetti Carbonara</h3>
-      <p>R$ 45,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Spaghetti Carbonara', 45.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+<section class="nossos-lancamentos">
+  <h2>Nossos Lançamentos!</h2>
+  <div class="lancamentos-container">
+    <div class="lancamento-card">
+      <a href="cardapio.html"><img src="img/Bolo_de_rolo_servido_com_sorvete.jpg" alt="Prato 1"></a>
+      <h3>Bolo de Rolo servido com Sorvete!</h3>
     </div>
-
-    <div class="item-cardapio">
-      <img src="img/lasanha.jpg" alt="Lasanha à Bolonhesa">
-      <h3>Lasanha à Bolonhesa</h3>
-      <p>R$ 48,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Lasanha à Bolonhesa', 48.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    <div class="lancamento-card">
+      <a href="cardapio.html"><img src="img/camarão-moranga.jpg" alt="Prato 2"></a>
+      <h3>Camarão Pitú na Moranga!</h3>
     </div>
-
-    <div class="item-cardapio">
-      <img src="img/margherita.jpg" alt="Pizza Margherita">
-      <h3>Pizza Margherita</h3>
-      <p>R$ 52,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Pizza Margherita', 52.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
+    <div class="lancamento-card">
+     <a href="cardapio.html"><img src="img/escondidinho-de-carne-seca.jpg" alt="Prato 3"></a>
+      <h3>Escondidinho de Carne Seca!</h3>
     </div>
-
-    <div class="item-cardapio">
-      <img src="img/funghi.jpg" alt="Risoto de Funghi">
-      <h3>Risoto de Funghi</h3>
-      <p>R$ 44,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Risoto de Funghi', 44.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/tiramisu.jpg" alt="Tiramisù">
-      <h3>Tiramisù</h3>
-      <p>R$ 26,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Tiramisù', 26.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/gnocchi.jpg" alt="Gnocchi ao Sugo">
-      <h3>Gnocchi ao Sugo</h3>
-      <p>R$ 40,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Gnocchi ao Sugo', 40.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/polenta.jpeg" alt="Polenta com Ragu">
-      <h3>Polenta com Ragu</h3>
-      <p>R$ 38,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Polenta com Ragu', 38.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/cannolo.jpeg" alt="Cannoli Siciliano">
-      <h3>Cannoli Siciliano</h3>
-      <p>R$ 28,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Cannoli Siciliano', 28.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/brusqueta.jpg" alt="Bruschetta Tradicional">
-      <h3>Bruschetta Tradicional</h3>
-      <p>R$ 22,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Bruschetta Tradicional', 22.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/panna.jpg" alt="Panna Cotta">
-      <h3>Panna Cotta</h3>
-      <p>R$ 24,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Panna Cotta', 24.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-    <div class="item-cardapio">
-      <img src="img/ravioli.jpg" alt="Panna Cotta">
-      <h3>Ravioli de Ricota ao Manjericão</h3>
-      <p>R$ 46,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Ravioli de Ricota ao Manjericão', 46.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
-      <div class="item-cardapio">
-      <img src="img/calzone.jpg" alt="Panna Cotta">
-      <h3>Calzone Napolitano</h3>
-      <p>R$ 49,00</p>
-      <button class="btn-add" onclick="adicionarCarrinho('Calzone Napolitano', 49.00)">Adicionar</button>
-      <button onclick="removerItem(0)" class="btn-remover">❌</button>
-    </div>
-
   </div>
 </section>
+
+
 
 <section id="contato" class="contato">
   <h2>Fale Conosco</h2>
@@ -200,8 +120,7 @@
   </div>
 </footer>
 
-
-
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
