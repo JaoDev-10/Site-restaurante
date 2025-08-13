@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -18,111 +17,77 @@ h1, h2, h3, strong {
     font-family: 'Playfair Display', serif;
 }
 
-body {
-    color: #FAF9F6;
-}
-
 header {
     color: #FAF9F6;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
+    padding: 10px 4%;
+    flex-wrap: wrap;
 }
 
-.topo-do-site{
-background-color: #810b0b; 
-  padding: 20px 40px; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-weight: 600;
+.topo-do-site {
+    background-color: #370B01;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: 600;
+    flex-wrap: wrap;
 }
 
-.logo img{
-    height: 150px;
+.logo img {
+    max-height: 120px;
     width: auto;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .menu a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: gray;
     transition: 0.3s;
 }
 
 .menu a:hover {
     transform: scale(1.05);
-    color: #FAF9F6;
+    color: #EED8AE;
 }
 
-
-.hero {
-  height: 100vh;
-  background-image: url('img/SPAGHETTI-MOLHO-DE-TOMATE-02.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  position: relative;
+/* Swiper */
+.swiper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.swiper-wrapper {
+    height: 100%;
 }
 
-.hero h1,
-.hero p,
-.hero a {
-  position: relative;
-  z-index: 2;
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.hero a {
-    margin-top: 20px;
-    text-decoration: none;
-    color: #FAF9F6;
-    border: solid 10px #810b0b;
-    border-radius: 10%;
-    background-color: #810b0b;
-    transition: 0.3s ease;
-}
-
-.hero a:hover {
-    border: solid 10px #FAF9F6;
-    background-color: #FAF9F6;
-    color: #810b0b;
-    transform: scale(1.05)
-}
-
-.hero strong {
-    font-size: 60px;
-    font-weight: 500;
-}
-
-.sobre {
-  padding: 100px 20px;
+/* Sobre */
+ .sobre {
+  padding: 100px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #810b0b;
+  background-color: #EED8AE;
 }
 
 .container-sobre {
@@ -132,9 +97,9 @@ background-color: #810b0b;
 
 .box-sobre {
   background-color: #FAF9F6;
-  padding: 40px;
+  padding: 30px;
   border-radius: 16px;
-  color: #810b0b;
+  color: #370B01;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -158,278 +123,200 @@ background-color: #810b0b;
   font-family: 'Poppins', sans-serif;
 }
 
-.cardapio {
-  background-color: #FAF9F6;
-  padding: 100px 40px;
-  text-align: center;
-  color: #810b0b;
+
+/* Nossos Lançamentos */
+.nossos-lancamentos {
+    padding: 50px 20px;
+    background-color: #EED8AE;
+    text-align: center;
 }
 
-.cardapio h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  margin-bottom: 40px;
+.nossos-lancamentos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #370B01;
 }
 
-.cardapio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+.lancamentos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.item-cardapio {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.lancamento-card {
+    background: #370B01;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    cursor: pointer;
+    color: #EED8AE;
+    display: flex;
+    flex-direction: column;
 }
 
-.item-cardapio:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+.lancamento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.item-cardapio img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.lancamento-card h3 {
+    margin: 15px;
+    font-size: 1.2rem;
+    color: #EED8AE;
 }
 
-.item-cardapio:hover img {
-  transform: scale(1.05);
+.lancamento-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-.item-cardapio h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin: 16px 0 8px;
-}
-
-.item-cardapio p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
+/* Contato */
 .contato {
-  background-color: #810b0b;
-  color: #FAF9F6;
-  padding: 100px 20px;
-  text-align: center;
-  padding-bottom: 60px;
+    background-color: #EED8AE;
+    color: #370B01;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .contato h2 {
-  font-size: 36px;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 60px;
+    font-size: 28px;
+    margin-bottom: 40px;
 }
 
 .contato-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .contato-item {
-  background-color: #FAF9F6;
-  color: #810b0b;
-  padding: 30px 20px;
-  border-radius: 12px;
-  width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+    background-color: #FAF9F6;
+    color: #370B01;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
 .contato-item:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  background-color: #f2e8e0;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background-color: #f2e8e0;
 }
 
 .contato-item i {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #810b0b;
+    font-size: 36px;
+    margin-bottom: 15px;
 }
 
-.contato-item h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-}
-
-.contato-item p {
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.cart-container {
-  position: relative;
-}
-
-.cart-icon {
-  position: relative;
-  cursor: pointer;
-  font-size: 22px;
-  color: #FAF9F6;
-  margin-left: 20px;
-  transition: transform 0.3s ease;
-}
-
-.cart-icon:hover {
-  transform: scale(1.1);
-}
-
-.cart-icon span {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  background-color: #FAF9F6;
-  color: #810b0b;
-  font-size: 13px;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 2px 6px;
-}
-
-.carrinho-dropdown {
-  position: absolute;
-  right: 0;
-  top: 40px;
-  width: 250px;
-  background-color: #FAF9F6;
-  color: #810b0b;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  display: none;
-  z-index: 999;
-}
-
-.carrinho-dropdown h4 {
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-}
-
-.carrinho-dropdown ul {
-  list-style: none;
-  padding: 0;
-  max-height: 150px;
-  overflow-y: auto;
-  font-size: 15px;
-}
-
-.carrinho-dropdown ul li {
-  margin-bottom: 8px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 4px;
-}
-
-.btn-add {
-  background-color: #810b0b;
-  color: #FAF9F6;
-  border: none;
-  padding: 8px 12px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s;
-}
-
-.btn-add:hover {
-  background-color: #5e1f1f;
-}
-
-.btn-remover {
-  background: none;
-  border: none;
-  color: #810b0b;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 10px;
-  transition: color 0.3s;
-}
-
-.btn-remover:hover {
-  color: #c0392b;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 33px;
+    padding: 20px;
     background-color: #FAF9F6;
     color: #810b0b;
     font-size: 14px;
     border-top: 3px solid black;
-    padding-top: 20px;
-    margin-top: 0;
-}
-
-.social-footer nav a {
-    color: #00ff08;
-}
-
-footer a {
-    color: #810b0b;
-}
-
-.social-footer p a {
-    color: whitesmoke;
-}
-
-
-.social-footer {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-.social-footer a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.social-footer p a {
-    text-decoration: underline;
 }
 
 .icons {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .icons img {
-  width: 30px;
-  height: 30px;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  filter: grayscale(100%);
+    width: 30px;
+    height: 30px;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: grayscale(100%);
 }
 
 .icons a:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.1);
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
-.icons a[href*="wa.me"]:hover img {
-  filter: drop-shadow(0 0 2px #1df524);
+/* Responsividade */
+@media (max-width: 1024px) {
+    .logo img {
+        max-height: 100px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .swiper {
+        height: 300px;
+    }
+
+    .box-sobre h2 {
+        font-size: 28px;
+    }
+
+    .nossos-lancamentos h2 {
+        font-size: 1.5rem;
+    }
+
+    .lancamento-card {
+        width: 90%;
+    }
+
+    .contato h2 {
+        font-size: 24px;
+    }
 }
 
-.icons a[href*="instagram"]:hover img {
-  filter: drop-shadow(0 0 2px #E1306C);
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .swiper {
+        height: 250px;
+    }
+
+    .box-sobre {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .lancamentos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper {
+        height: 200px;
+    }
+
+    .box-sobre h2 {
+        font-size: 22px;
+    }
+
+    .contato h2 {
+        font-size: 20px;
+    }
+
+    .lancamento-card img {
+        height: 150px;
+    }
 }
