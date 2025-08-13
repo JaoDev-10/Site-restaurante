@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio</title>
+  <link rel="stylesheet" href="cardapio.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <header class="topo-do-site">
+    <div class="logo">
+      <a href="index.html"><img src="img/logo restaurante definitivo - Editado.png"></a>
+    </div>
+
+    <div class="barra-pesquisa">
+      <input type="text" id="pesquisa" placeholder="Buscar no cardápio..." />
+      <i class="fas fa-search"></i>
+    </div>
+
+    <nav class="menu">
+      <a href="#" id="filtro-comida" class="ativo">Pratos Principais</a>
+      <a href="#" id="filtro-sobremesa">Sobremesas</a>
+      <a href="#" id="filtro-bebida">Bebidas</a>
+
+      <div class="carrinho">
+        <h2><i class="fas fa-shopping-cart"></i> Carrinho (<span id="quantidade-itens">0</span> itens)</h2>
+        <ul id="lista-carrinho"></ul>
+        <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+        <button id="finalizar">Finalizar Pedido</button>
+      </div>
+    </nav>
+  </header>
+
+  <section id="cardapio" class="cardapio">
+    <h2>Conheça nosso Cardápio!</h2>
+
+    <div class="cardapio-grid">
+      <!-- Pratos Principais -->
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/carneiro.jpg" alt="Spaghetti Carbonara" />
+        <h3>Carneiro na Brasa</h3>
+        <p>R$ 49,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Carneiro na Brasa', 49.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/baiao.jpg" alt="Lasanha à Bolonhesa" />
+        <h3>Baião Gourmet</h3>
+        <p>R$ 39,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Baião Gourmet', 39.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/buchada-de-bode-.jpg" alt="Pizza Margherita" />
+        <h3>Buchada de bode Artesanal</h3>
+        <p>R$ 59,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Buchada de Bode Artesanal', 59.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/camarão-moranga.jpg" alt="Risoto de Funghi" />
+        <h3>Camarão Pitú na Moranga</h3>
+        <p>R$ 120,00</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Camarão Pitú na Moranga', 120.0)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/cuscuz gourmet.jpg" alt="Gnocchi ao Sugo" />
+        <h3>Cuscuz Gourmet</h3>
+        <p>R$ 29,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Cuscuz de Gourmet', 29.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/polenta.jpeg" alt="Polenta com Ragu" />
+        <h3>Polenta com Charque</h3>
+        <p>R$ 39,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Polenta com Charque', 39.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/escondidinho-de-carne-seca.jpg" alt="Bruschetta Tradicional" />
+        <h3>Escondidinho de Carne Seca</h3>
+        <p>R$ 69,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Escondidinho de Carne', 69.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/feijoada.jpg" alt="Ravioli de Ricota ao Manjericão" />
+        <h3>Feijoada Caseira Completa</h3>
+        <p>R$ 110,00</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Feijoada Caseira Completa', 110.0)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/Filé-purê.jpg" alt="Calzone Napolitano" />
+        <h3>Filé de Carne de Sol com Purê de Macaxeira</h3>
+        <p>R$ 49,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Calzone Napolitano', 49.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/galinhada.jpg" alt="Calzone Napolitano" />
+        <h3>Galinhada Tradicional</h3>
+        <p>R$ 99,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Galinhada Tradicional', 99.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/moqueca.jpg" alt="Calzone Napolitano" />
+        <h3>Moqueca de Frutos do Mar</h3>
+        <p>R$ 120,00</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Moqueca de Frutos do Mar', 120.0)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="comida">
+        <img src="img/arroz-capote.jpg" alt="Calzone Napolitano" />
+        <h3>Arroz de Capote</h3>
+        <p>R$ 99,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Arroz de Capote', 99.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+       <!-- Sobremesas -->
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/bolo-abacaxi.jpg" alt="Tiramisù" />
+        <h3>Bolo de Abacaxi com Chantilly de Coco</h3>
+        <p>R$ 10,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Bolo de Abacaxi com chantilly de Coco', 10.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/bolo-choco.jpg" alt="Cannoli Siciliano" />
+        <h3>Bolo de Chocolate com Baba de Moça</h3>
+        <p>R$ 10,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Bolo de Chocolate com Baba de Moça', 10.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/Bolo_de_rolo_servido_com_sorvete.jpg" alt="Panna Cotta" />
+        <h3>Bolo de Rolo com Sorvete de Milho</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Bolo de Rolo com Sorvete de Milho', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/mingau.jpg" alt="Panna Cotta" />
+        <h3>Mingau Maranhense</h3>
+        <p>R$ 15,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Mingau Maranhense', 15.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/panqueca-docedeleite-baunilha.jpg" alt="Panna Cotta" />
+        <h3>Panqueca com Doce de Leite e Sorvete de Baunilha</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Panquea com Doce de Leite e Sorvete de Baunilha', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/pudim.jpg" alt="Panna Cotta" />
+        <h3>Pudim Tradicional</h3>
+        <p>R$ 10,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Panna Cotta', 10.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/sorvete-tapioca-frutas-vermelhas.jpg" alt="Panna Cotta" />
+        <h3>Sorvete de Tapioca com Frutas Vermelhas</h3>
+        <p>R$ 15,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Sorvete de Tapioca com Frutas Vermelhas', 15.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="sobremesa">
+        <img src="img/cartola.jpg" alt="Panna Cotta" />
+        <h3>Cartola Tradicional</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Cartola Tradicional', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <!-- Bebidas -->
+      <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/Coca-2L.jpg" alt="Coca-Cola 2 Litros" class="bebidas" />
+        <h3>Coca-Cola 2 Litros</h3>
+        <p>R$ 14,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Coca-Cola 2 Litros', 14.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+       <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/coca-lata.jpg" alt="Coca-Cola 2 Litros" class="bebidas" />
+        <h3>Coca-Cola Lata</h3>
+        <p>R$ 5,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Coca-Cola Lata', 5.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/guarana-2L.jpg" alt="Coca-Cola 2 Litros" class="bebidas" />
+        <h3>Guaraná 2 Litros</h3>
+        <p>R$ 14,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Guaraná 2 Litros', 14.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/guarana-lata.jpg" alt="Coca-Cola 2 Litros" class="bebidas" />
+        <h3>Guaraná Lata</h3>
+        <p>R$ 5,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Guaraná Lata', 5.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/sao-geraldo-2L-removebg-preview.png" alt="Coca-Cola 2 Litros" class="bebidas"/>
+        <h3>São Geraldo 2 Litros</h3>
+        <p>R$ 14,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('São Geraldo 2 Litros', 14.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/sao-geraldo-lata.jpg" alt="Coca-Cola 2 Litros" class="bebidas"/>
+        <h3>São Geraldo Lata</h3>
+        <p>R$ 5,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('São Geraldo Lata', 5.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+       <div class="item-cardapio" data-categoria="bebida">
+        <img src="img/guarana-jesus-garrafa.jpg" alt="Coca-Cola 2 Litros" class="bebidas"/>
+        <h3>Guaraná Jesus 2 Litros</h3>
+        <p>R$ 14,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Guaraná Jesus 2 Litros', 14.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida" class="bebidas"/>
+        <img src="img/guarana-jesus-lata.jpg" alt="Coca-Cola 2 Litros" class="bebidas"/>
+        <h3>Guaraná Jesus Lata</h3>
+        <p>R$ 5,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Guaraná Jesus Lata', 5.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida" class="bebidas"/>
+        <img src="img/cajuina.jpg" alt="Coca-Cola 2 Litros" class="bebidas"/>
+        <h3>Cajuína Natural 450ml</h3>
+        <p>R$ 9,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Cajuína Natural 450ml', 9.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida" class="bebidas"/>
+        <img src="img/acerola.jpeg" alt="Coca-Cola 2 Litros" />
+        <h3>Suco de Acerola 1 Litro</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Suco de Acerola 1 Litro', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida" class="bebidas"/>
+        <img src="img/maracuja.jpg" alt="Coca-Cola 2 Litros" />
+        <h3>Suco de Maracujá 1 Litro</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Suco de Maracujá 1 Litro', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+
+      <div class="item-cardapio" data-categoria="bebida" class="bebidas"/>
+        <img src="img/laranja.jpg" alt="Coca-Cola 2 Litros" />
+        <h3>Suco de Laranja 1 Litro</h3>
+        <p>R$ 19,90</p>
+        <button class="btn-add" onclick="adicionarCarrinho('Suo de laranja 1 Litro', 19.90)">Adicionar</button>
+        <button onclick="removerItem(0)" class="btn-remover">❌</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="cardapio.js"></script>
+</body>
+</html>
